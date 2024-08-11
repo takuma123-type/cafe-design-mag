@@ -8,12 +8,12 @@ import styles from './layout.module.css';
 
 export const metadata = {
   metadataBase: new URL(process.env.BASE_URL || 'http://localhost:3000'),
-  title: 'Simple Blog',
-  description: 'A simple blog presented by microCMS',
+  title: 'Cafe design mag',
+  description: 'こちらは珈琲、紅茶、お菓子などの専門のブログです。',
   openGraph: {
-    title: 'Simple Blog',
-    description: 'A simple blog presented by microCMS',
-    images: '/ogp.png',
+    title: 'Cafe design mag',
+    description: 'こちらは珈琲、紅茶、お菓子などの専門のブログです。',
+    images: '/CoffeeLogo.png',
   },
   alternates: {
     canonical: '/',

@@ -1,8 +1,149 @@
 .header {
-  padding: 16px 24px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
-.logo {
-  height: 24px;
-  width: auto;
+.logo a,
+.hamburger {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 9999; /* Ensure hamburger is above overlay */
+}
+
+.hamburgerIcon {
+  width: 2rem;
+  height: 0.25rem;
+  background: #333;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+.hamburgerIconOpen1 {
+  transform: rotate(45deg);
+}
+
+.hamburgerIconOpen2 {
+  opacity: 0;
+}
+
+.hamburgerIconOpen3 {
+  transform: rotate(-45deg);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  width: 80%;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  padding: 2rem;
+  background: white;
+  z-index: 8; /* Ensure nav is above the overlay */
+}
+
+.nav a {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  text-decoration: none;
+  transition: color 0.3s linear;
+}
+
+.desktopNav a {
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s linear;
+}
+
+.nav.open {
+  transform: translateX(0);
+}
+
+.navButton {
+  margin: 10px 0;
+  font-family: AdjustedYuGothic, Yu Gothic, YuGothic, sans-serif;
+  background-color: black; /* Black background */
+  color: white; /* White text */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Center the text inside the button */
+  text-decoration: none; /* No underline */
+  display: inline-block; /* Line up buttons in a row */
+  font-weight: bold; /* Bold font weight */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.overlay {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 7; /* Overlay is below the nav but above everything else */
+}
+
+@media (max-width: 1095px) {
+  .hamburger {
+    display: flex;
+  }
+  .overlay {
+    display: block; /* Only show overlay when nav is open */
+  }
+}
+
+.desktopNav {
+  display: none;
+}
+
+.blackButton {
+  background-color: black; /* Black background */
+  color: white; /* White text */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Center the text inside the button */
+  text-decoration: none; /* No underline */
+  display: inline-block; /* Line up buttons in a row */
+  font-weight: bold; /* Bold font weight */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.blackButton:hover {
+  background-color: #333; /* Darker grey on hover */
+}
+
+@media (min-width: 1095px) {
+  .hamburger {
+    display: none;
+  }
+  .desktopNav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
 }
